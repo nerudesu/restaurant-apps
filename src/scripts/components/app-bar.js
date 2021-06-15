@@ -9,14 +9,14 @@ class AppBar extends HTMLElement {
         <!-- Mobile Navbar -->
         <div class="menumob">
           <img src="images/logo/logo.webp" alt="Company Logo">
-          <a class="nav-menu" id="menu" href="#" aria-label="menu">
+          <a class="nav-menu" id="menu" aria-label="menu">
             <i class="fas fa-bars"></i>
           </a>
         </div>
 
         <nav id="drawer" class="navmob">
           <ul class="navlistmob">
-            <li class="navitemsmob"><a href="/index.html" class="active">Home</a></li>
+            <li class="navitemsmob"><a href="#/home" class="active">Home</a></li>
             <li class="navitemsmob"><a href="#favorite">Favorite</a></li>
             <li class="navitemsmob"><a href="https://github.com/nerudesu" target="_blank" rel="noreferrer">About Us</a></li>
           </ul>
@@ -26,7 +26,7 @@ class AppBar extends HTMLElement {
         <nav class="nav">
           <img src="images/logo/logo.webp" alt="Company Logo">
           <ul class="navlist">
-            <li class="navitems"><a href="/index.html" class="active">Home</a></li>
+            <li class="navitems"><a href="#/home" class="active">Home</a></li>
             <li class="navitems"><a href="#favorite">Favorite</a></li>
             <li class="navitems"><a href="https://github.com/nerudesu" target="_blank" rel="noreferrer" id="aboutus">About Us</a></li>
           </ul>

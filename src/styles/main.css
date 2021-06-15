@@ -311,6 +311,11 @@ main {
     color: palevioletred;
 }
 
+.link-detail {
+    text-decoration: none;
+    color: #fff;
+}
+
 mark {
     background-color: black;
     color: white;
