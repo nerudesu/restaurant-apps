@@ -5,6 +5,10 @@ const createRestaurantItemTemplate = (restaurant) => `
   <div class="container">
       <img class="restaurant-item__thumbnail"
           src="${CONFIG.BASE_IMAGE_URL('large') + restaurant.pictureId}"
+          srcset="${CONFIG.BASE_IMAGE_URL('small') + restaurant.pictureId} 425w,
+            ${CONFIG.BASE_IMAGE_URL('medium') + restaurant.pictureId} 768w,
+            ${CONFIG.BASE_IMAGE_URL('large') + restaurant.pictureId} 1024w"
+          sizes="50vw"
           alt="Image restaurant ${restaurant.name}">
       <div class="top-left">
           <p class="restaurant-item__city"><i class="fas fa-map-marker-alt"></i> ${restaurant.city}</p>
