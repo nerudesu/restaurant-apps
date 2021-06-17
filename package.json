@@ -37,10 +37,11 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "copy-webpack-plugin": "^6.0.3",
     "html-webpack-plugin": "^4.3.0",
     "regenerator-runtime": "^0.13.5",
-    "webpack-merge": "^5.0.9",
-    "clean-webpack-plugin": "^4.0.0-alpha.0"
+    "serviceworker-webpack-plugin": "^1.0.1",
+    "webpack-merge": "^5.0.9"
   }
 }

@@ -7,6 +7,7 @@ import './components/my-hero';
 import './components/my-footer';
 
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 // Navigation
 const app = new App({
@@ -22,4 +23,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
