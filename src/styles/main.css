@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import url('../../node_modules/@fortawesome/fontawesome-free/css/all.min.css');
-
 * {
     padding: 0;
     margin: 0;
@@ -275,6 +274,76 @@ main {
     text-align: justify;
 }
 
+/* Restaurant Details */
+
+.restaurant {
+    margin: 32px auto auto;
+    text-align: left;
+}
+
+.restaurant-detail-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.detail-item {
+    padding: 16px;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 16px;
+}
+
+.menus>ol {
+    padding: 16px 32px;
+}
+
+.review-form {
+    margin-bottom: 16px;
+}
+
+.form-inline {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Add some margins for each label */
+
+.form-inline label {
+    margin: 5px 10px 5px 0;
+}
+
+/* Style the input fields */
+
+.form-inline input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Style the submit button */
+
+.form-inline button {
+    padding: 10px 20px;
+    background-color: gray;
+    border: 1px solid #ddd;
+    color: white;
+}
+
+.form-inline button:hover {
+    background-color: black;
+}
+
 /* Fixed Footer */
 
 .footer {
@@ -321,6 +390,10 @@ mark {
     color: white;
     padding: 3px 6px;
     border-radius: 12px;
+}
+
+h2 {
+    padding-bottom: 12px;
 }
 
 /*

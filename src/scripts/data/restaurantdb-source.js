@@ -21,7 +21,7 @@ class RestaurantDbSource {
         'Content-Type': 'application/json',
         'X-Auth-Token': CONFIG.KEY,
       },
-      body: data,
+      body: JSON.stringify(data),
     });
     const responseJson = await response.json();
     return responseJson;
