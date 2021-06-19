@@ -2,6 +2,7 @@ import CONFIG from '../../globals/config';
 
 const createRestaurantItemTemplate = (restaurant) => `
   <article class="restaurant-item">
+  <a class="link-detail" href="${`/#/detail/${restaurant.id}`}">
   <div class="container">
       <img class="restaurant-item__thumbnail"
           src="${CONFIG.BASE_IMAGE_URL('large') + restaurant.pictureId}"
@@ -12,29 +13,31 @@ const createRestaurantItemTemplate = (restaurant) => `
           alt="Image restaurant ${restaurant.name}">
       <div class="top-left">
           <p class="restaurant-item__city"><i class="fas fa-map-marker-alt"></i> ${restaurant.city}</p>
-          <h1 class="restaurant-item__name"><a class="link-detail" href="${`/#/detail/${restaurant.id}`}">${restaurant.name}</a></h1>
+          <h1 class="restaurant-item__name">${restaurant.name}</h1>
       </div>
       <div class="bottom-left">
           <p class="restaurant-item__rating"><i class="fas fa-star checked"></i> ${restaurant.rating}</p>
       </div>
       <div class="bottom-right">
-          <button class="button" type="button" aria-label="Add to favorite ${restaurant.name}">
-              <i class="far fa-heart"></i>
-          </button>
       </div>
   </div>
   <div class="restaurant-item__content">
       <p class="restaurant-item__description">${restaurant.description.substr(0, 144).concat(' ....')}</p>
   </div>
+  </a>
   </article>
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => `
   <article class="restaurant-detail-card">
     <div class="container">
-      <img alt="Image ${restaurant.restaurant.name}"
-        src="${CONFIG.BASE_IMAGE_URL('small') + restaurant.restaurant.pictureId}"
-        class="restaurant-item__thumbnail">
+      <img class="restaurant-item__thumbnail"
+        src="${CONFIG.BASE_IMAGE_URL('large') + restaurant.restaurant.pictureId}"
+        srcset="${CONFIG.BASE_IMAGE_URL('small') + restaurant.restaurant.pictureId} 425w,
+          ${CONFIG.BASE_IMAGE_URL('medium') + restaurant.restaurant.pictureId} 768w,
+          ${CONFIG.BASE_IMAGE_URL('large') + restaurant.restaurant.pictureId} 1024w"
+        sizes="50vw"
+        alt="Image restaurant ${restaurant.restaurant.name}">
       <div class="top-left">
           <p class="restaurant-item__city">
             <i class="fas fa-map-marker-alt"></i> ${restaurant.restaurant.address}, ${restaurant.restaurant.city}
@@ -45,9 +48,6 @@ const createRestaurantDetailTemplate = (restaurant) => `
           <p class="restaurant-item__rating"><i class="fas fa-star checked"></i> ${restaurant.restaurant.rating}</p>
       </div>
       <div class="bottom-right">
-          <button class="button" type="button" aria-label="Add to favorite ${restaurant.restaurant.name}">
-              <i class="far fa-heart"></i>
-          </button>
       </div>
     </div>
     <div class="detail-item">
@@ -97,5 +97,22 @@ const createRestaurantDetailTemplate = (restaurant) => `
   </article>
 `;
 
+const createFavoriteButtonTemplate = () => `
+  <button class="button" id="favoriteButton" type="button" aria-label="Add to favorite">
+    <i class="far fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+const createFavoritedButtonTemplate = () => `
+  <button class="button" id="favoriteButton" type="button" aria-label="Remove from favorite">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
 // eslint-disable-next-line import/prefer-default-export
-export { createRestaurantItemTemplate, createRestaurantDetailTemplate };
+export {
+  createRestaurantItemTemplate,
+  createRestaurantDetailTemplate,
+  createFavoriteButtonTemplate,
+  createFavoritedButtonTemplate,
+};

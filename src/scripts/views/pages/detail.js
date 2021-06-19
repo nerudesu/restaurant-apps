@@ -2,6 +2,9 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantDbSource from '../../data/restaurantdb-source';
 import { createRestaurantDetailTemplate } from '../templates/template-creator';
 import AddReview from '../../utils/add-review';
+import FavBtnInitiator from '../../utils/fav-button-initiator';
+import loadingSpinner from '../../utils/spinner';
+import showToast from '../../utils/toast';
 
 const Detail = {
   async render() {
@@ -13,35 +16,47 @@ const Detail = {
         </div>
       </div>
     </section>
+    <div id="snackbar">Some text some message..</div>
     `;
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurant = await RestaurantDbSource.restaurantDetail(url.id);
+    // Add loading indicator
     const restaurantContainer = document.getElementById('restaurant-details');
+    restaurantContainer.innerHTML = loadingSpinner;
 
-    restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
 
-    const btnSubmit = document.querySelector('#add-review');
-    const nameInput = document.querySelector('#name');
-    const reviewInput = document.querySelector('#review');
+    try {
+      const restaurant = await RestaurantDbSource.restaurantDetail(url.id);
 
-    btnSubmit.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (nameInput.value === '' || reviewInput.value === '') {
-        // TODO: Ganti Toast
-        // eslint-disable-next-line no-alert
-        alert('Inputan tidak boleh ada yang kosong');
-        nameInput.value = '';
-        reviewInput.value = '';
-      } else {
-        AddReview(url.id, nameInput.value, reviewInput.value);
-        nameInput.value = '';
-        reviewInput.value = '';
-      }
-    });
+      restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+
+      FavBtnInitiator.init({
+        favBtnContainer: document.querySelector('.bottom-right'),
+        restaurant,
+      });
+
+      const btnSubmit = document.querySelector('#add-review');
+      const nameInput = document.querySelector('#name');
+      const reviewInput = document.querySelector('#review');
+
+      btnSubmit.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (nameInput.value === '' || reviewInput.value === '') {
+          // eslint-disable-next-line no-alert
+          showToast('Any input cannot be empty!');
+          nameInput.value = '';
+          reviewInput.value = '';
+        } else {
+          AddReview(url.id, nameInput.value, reviewInput.value);
+          nameInput.value = '';
+          reviewInput.value = '';
+        }
+      });
+    } catch (e) {
+      restaurantContainer.innerHTML = `<p class="no-fav">Error "${e}", try to refresh the page</p>`;
+    }
   },
 };
 
