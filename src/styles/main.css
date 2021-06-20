@@ -331,6 +331,7 @@ hr {
     padding: 10px;
     background-color: #fff;
     border: 1px solid #ddd;
+    min-height: 44px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -339,9 +340,10 @@ hr {
 
 .form-inline button {
     padding: 10px 20px;
-    background-color: gray;
+    background-color: #1d1d1d;
     border: 1px solid #ddd;
     color: white;
+    min-height: 44px;
 }
 
 .no-fav {
