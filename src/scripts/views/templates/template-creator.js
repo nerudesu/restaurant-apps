@@ -105,7 +105,7 @@ const createFavoriteButtonTemplate = () => `
 
 const createFavoritedButtonTemplate = () => `
   <button class="button" id="favoriteButton" type="button" aria-label="Remove from favorite">
-    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fas fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
