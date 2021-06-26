@@ -1,4 +1,5 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+/* eslint-disable import/no-extraneous-dependencies */
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
@@ -8,7 +9,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [
@@ -54,7 +55,6 @@ module.exports = {
         },
       ],
     }),
-    new CleanWebpackPlugin(),
     new ServiceWorkerWebpackPlugin({
       entry: path.resolve(__dirname, 'src/scripts/sw.js'),
     }),
