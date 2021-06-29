@@ -4,8 +4,8 @@ const createRestaurantItemTemplate = (restaurant) => `
   <article class="restaurant-item">
   <a class="link-detail" href="${`/#/detail/${restaurant.id}`}">
   <div class="container">
-      <img class="restaurant-item__thumbnail"
-          src="${CONFIG.BASE_IMAGE_URL('large') + restaurant.pictureId}"
+      <img class="restaurant-item__thumbnail lazyload"
+          data-src="${CONFIG.BASE_IMAGE_URL('large') + restaurant.pictureId}"
           srcset="${CONFIG.BASE_IMAGE_URL('small') + restaurant.pictureId} 425w,
             ${CONFIG.BASE_IMAGE_URL('medium') + restaurant.pictureId} 768w,
             ${CONFIG.BASE_IMAGE_URL('large') + restaurant.pictureId} 1024w"

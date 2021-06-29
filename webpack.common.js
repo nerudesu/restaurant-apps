@@ -3,10 +3,22 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/scripts/index.js'),
+  entry: {
+    main: path.resolve(__dirname, 'src/scripts/index.js'),
+    styles: [
+      path.resolve(__dirname, 'src/styles/main.css'),
+      path.resolve(__dirname, 'src/styles/responsive.css'),
+    ],
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
@@ -15,14 +27,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|hif|webp)$/,
@@ -62,6 +67,30 @@ module.exports = {
     new ServiceWorkerWebpackPlugin({
       entry: path.resolve(__dirname, 'src/scripts/sw.js'),
     }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+      ],
+    }),
+    new ImageminWebpWebpackPlugin({
+      config: [
+        {
+          test: /\.(jpe?g|png)/,
+          options: {
+            quality: 50,
+          },
+        },
+      ],
+      overrideExtension: true,
+    }),
+    new FixStyleOnlyEntriesPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[chunkhash:8].css',
+    }),
+    new OptimizeCSSAssetsPlugin({}),
   ],
   optimization: {
     splitChunks: {
