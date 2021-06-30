@@ -28,13 +28,13 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
 
     try {
-      const restaurant = await RestaurantDbSource.restaurantDetail(url.id);
+      const data = await RestaurantDbSource.restaurantDetail(url.id);
 
-      restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+      restaurantContainer.innerHTML = createRestaurantDetailTemplate(data);
 
       FavBtnInitiator.init({
-        favBtnContainer: document.querySelector('.bottom-right'),
-        restaurant,
+        favBtnContainer: document.querySelector('#favButtonContainer'),
+        restaurant: data.restaurant,
       });
 
       const btnSubmit = document.querySelector('#add-review');
@@ -44,7 +44,6 @@ const Detail = {
       btnSubmit.addEventListener('submit', (e) => {
         e.preventDefault();
         if (nameInput.value === '' || reviewInput.value === '') {
-          // eslint-disable-next-line no-alert
           showToast('Any input cannot be empty!');
           nameInput.value = '';
           reviewInput.value = '';

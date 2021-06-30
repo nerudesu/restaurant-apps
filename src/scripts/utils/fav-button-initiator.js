@@ -6,7 +6,7 @@ import showToast from './toast';
 const FavBtnInitiator = {
   async init({ favBtnContainer, restaurant }) {
     this._favBtnContainer = favBtnContainer;
-    this._restaurant = restaurant.restaurant;
+    this._restaurant = restaurant;
 
     await this._renderButton();
   },
@@ -32,7 +32,7 @@ const FavBtnInitiator = {
     const favBtn = document.querySelector('#favoriteButton');
     favBtn.addEventListener('click', async () => {
       await FavoriteRestoIdb.putResto(this._restaurant);
-      showToast('Added to favorite');
+      showToast('Added to favorite', this._toaster);
       this._renderButton();
     });
   },
@@ -43,7 +43,7 @@ const FavBtnInitiator = {
     const favBtn = document.querySelector('#favoriteButton');
     favBtn.addEventListener('click', async () => {
       await FavoriteRestoIdb.deleteResto(this._restaurant.id);
-      showToast('Removed from favorite');
+      showToast('Removed from favorite', this._toaster);
       this._renderButton();
     });
   },

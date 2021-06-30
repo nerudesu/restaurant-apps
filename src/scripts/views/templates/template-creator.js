@@ -47,7 +47,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
       <div class="bottom-left">
           <p class="restaurant-item__rating"><i class="fas fa-star checked"></i> ${restaurant.restaurant.rating}</p>
       </div>
-      <div class="bottom-right">
+      <div class="bottom-right" id="favButtonContainer">
       </div>
     </div>
     <div class="detail-item">
@@ -101,6 +101,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
   </article>
 `;
 
+// TODO: Memberi nama yang lebih berbeda
 const createFavoriteButtonTemplate = () => `
   <button class="button" id="favoriteButton" type="button" aria-label="Add to favorite">
     <i class="far fa-heart" aria-hidden="true"></i>
