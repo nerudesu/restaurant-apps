@@ -2,11 +2,11 @@
 import FavBtnInitiator from '../src/scripts/utils/fav-button-initiator';
 import FavoriteRestoIdb from '../src/scripts/data/favoriteresto-idb';
 
-describe('Favoriting A Restaurant', () => {
-  const addFavButtonContainer = () => {
-    document.body.innerHTML = '<div class="bottom-right" id="favButtonContainer">';
-  };
+const addFavButtonContainer = () => {
+  document.body.innerHTML = '<div class="bottom-right" id="favButtonContainer">';
+};
 
+describe('Favoriting A Restaurant', () => {
   beforeEach(() => {
     addFavButtonContainer();
   });
