@@ -8,8 +8,12 @@ const AddReview = (id, name, review) => {
 
   RestaurantDbSource.sendReview(dataInput).then((res) => {
     const content = `${res.customerReviews.map((rev) => `
-      By ${rev.name} on ${rev.date}<br>
-      ${rev.review}<br>
+      <div id="identity-review">
+      By ${rev.name} on ${rev.date}
+      </div>
+      <div id="text-review">
+      ${rev.review}
+      </div>
       <hr>
     `).join('')}`;
     const RenderReview = document.querySelector('.render-review');

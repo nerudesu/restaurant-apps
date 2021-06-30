@@ -82,13 +82,17 @@ const createRestaurantDetailTemplate = (restaurant) => `
             <input type="text" id="name" name="name" placeholder="Write down your name"><br>
             <label for="review">Review:</label><br>
             <input type="text" id="review" name="review" placeholder="Give your feedback"><br><br>
-            <button type="submit">Submit</button>
+            <button type="submit" id='submit-review'>Submit</button>
           </form>
         </div>
         <div class="render-review">
         ${restaurant.restaurant.customerReviews.map((review) => `
-          By ${review.name} on ${review.date}<br>
-          ${review.review}<br>
+          <div id="identity-review">
+          By ${review.name} on ${review.date}
+          </div>
+          <div id="text-review">
+          ${review.review}
+          </div>
           <hr>
         `).join('')}
         </div>
