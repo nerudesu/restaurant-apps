@@ -2,7 +2,7 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantDbSource from '../../data/restaurantdb-source';
 import { createRestaurantDetailTemplate } from '../templates/template-creator';
 import AddReview from '../../utils/add-review';
-import FavBtnInitiator from '../../utils/fav-button-initiator';
+import FavBtnPresenter from '../../utils/fav-button-presenter';
 import loadingSpinner from '../../utils/spinner';
 import showToast from '../../utils/toast';
 
@@ -32,7 +32,7 @@ const Detail = {
 
       restaurantContainer.innerHTML = createRestaurantDetailTemplate(data);
 
-      FavBtnInitiator.init({
+      FavBtnPresenter.init({
         favBtnContainer: document.querySelector('#favButtonContainer'),
         restaurant: data.restaurant,
       });

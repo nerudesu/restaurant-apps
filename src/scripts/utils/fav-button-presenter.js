@@ -1,9 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 import FavoriteRestoIdb from '../data/favoriteresto-idb';
-import { createFavoriteButtonTemplate, createFavoritedButtonTemplate } from '../views/templates/template-creator';
+import { createFavRestoButtonTemplate, createUnfavRestoButtonTemplate } from '../views/templates/template-creator';
 import showToast from './toast';
 
-const FavBtnInitiator = {
+const FavBtnPresenter = {
   async init({ favBtnContainer, restaurant }) {
     this._favBtnContainer = favBtnContainer;
     this._restaurant = restaurant;
@@ -27,7 +27,7 @@ const FavBtnInitiator = {
   },
 
   _renderFavorite() {
-    this._favBtnContainer.innerHTML = createFavoriteButtonTemplate();
+    this._favBtnContainer.innerHTML = createFavRestoButtonTemplate();
 
     const favBtn = document.querySelector('#favoriteButton');
     favBtn.addEventListener('click', async () => {
@@ -38,7 +38,7 @@ const FavBtnInitiator = {
   },
 
   _renderFavorited() {
-    this._favBtnContainer.innerHTML = createFavoritedButtonTemplate();
+    this._favBtnContainer.innerHTML = createUnfavRestoButtonTemplate();
 
     const favBtn = document.querySelector('#favoriteButton');
     favBtn.addEventListener('click', async () => {
@@ -49,4 +49,4 @@ const FavBtnInitiator = {
   },
 };
 
-export default FavBtnInitiator;
+export default FavBtnPresenter;

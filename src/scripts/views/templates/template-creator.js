@@ -101,14 +101,14 @@ const createRestaurantDetailTemplate = (restaurant) => `
   </article>
 `;
 
-// TODO: Memberi nama yang lebih berbeda
-const createFavoriteButtonTemplate = () => `
+// DONE: Giving different name
+const createFavRestoButtonTemplate = () => `
   <button class="button" id="favoriteButton" type="button" aria-label="Add to favorite">
     <i class="far fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
-const createFavoritedButtonTemplate = () => `
+const createUnfavRestoButtonTemplate = () => `
   <button class="button" id="favoriteButton" type="button" aria-label="Remove from favorite">
     <i class="fas fa-heart" aria-hidden="true"></i>
   </button>
@@ -118,6 +118,6 @@ const createFavoritedButtonTemplate = () => `
 export {
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
-  createFavoriteButtonTemplate,
-  createFavoritedButtonTemplate,
+  createFavRestoButtonTemplate,
+  createUnfavRestoButtonTemplate,
 };
