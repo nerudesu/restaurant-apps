@@ -5,6 +5,7 @@ import AddReview from '../../utils/add-review';
 import FavBtnPresenter from '../../utils/fav-button-presenter';
 import loadingSpinner from '../../utils/spinner';
 import showToast from '../../utils/toast';
+import FavoriteRestoIdb from '../../data/favoriteresto-idb';
 
 const Detail = {
   async render() {
@@ -34,6 +35,7 @@ const Detail = {
 
       FavBtnPresenter.init({
         favBtnContainer: document.querySelector('#favButtonContainer'),
+        favRestos: FavoriteRestoIdb,
         restaurant: data.restaurant,
       });
 

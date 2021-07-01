@@ -1,12 +1,12 @@
 /* eslint-disable no-underscore-dangle */
-import FavoriteRestoIdb from '../data/favoriteresto-idb';
 import { createFavRestoButtonTemplate, createUnfavRestoButtonTemplate } from '../views/templates/template-creator';
 import showToast from './toast';
 
 const FavBtnPresenter = {
-  async init({ favBtnContainer, restaurant }) {
+  async init({ favBtnContainer, favRestos, restaurant }) {
     this._favBtnContainer = favBtnContainer;
     this._restaurant = restaurant;
+    this._favRestos = favRestos;
 
     await this._renderButton();
   },
@@ -22,7 +22,7 @@ const FavBtnPresenter = {
   },
 
   async _isRestoExist(id) {
-    const restaurant = await FavoriteRestoIdb.getResto(id);
+    const restaurant = await this._favRestos.getResto(id);
     return !!restaurant;
   },
 
@@ -31,7 +31,7 @@ const FavBtnPresenter = {
 
     const favBtn = document.querySelector('#favoriteButton');
     favBtn.addEventListener('click', async () => {
-      await FavoriteRestoIdb.putResto(this._restaurant);
+      await this._favRestos.putResto(this._restaurant);
       showToast('Added to favorite', this._toaster);
       this._renderButton();
     });
@@ -42,7 +42,7 @@ const FavBtnPresenter = {
 
     const favBtn = document.querySelector('#favoriteButton');
     favBtn.addEventListener('click', async () => {
-      await FavoriteRestoIdb.deleteResto(this._restaurant.id);
+      await this._favRestos.deleteResto(this._restaurant.id);
       showToast('Removed from favorite', this._toaster);
       this._renderButton();
     });
