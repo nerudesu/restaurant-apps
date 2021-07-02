@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build-local": "webpack --config webpack.prod.js",
+    "build": "npm run test && webpack --config webpack.deploy.js",
     "build-image": "node sharp.js",
     "build-video": "node build-video.js",
     "test": "karma start",
