@@ -1,14 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-@import url('../../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css');
-@import url('../../node_modules/@fortawesome/fontawesome-free/css/regular.min.css');
-@import url('../../node_modules/@fortawesome/fontawesome-free/css/solid.min.css');
-
 * {
     padding: 0;
     margin: 0;
     border: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: sans-serif;
 }
 
 body, html {
@@ -36,9 +31,9 @@ body, html {
     margin-left: 16px;
 }
 
-.menumob a {
-    text-decoration: none;
+.menumob button {
     color: white !important;
+    background-color: transparent;
     font-size: 32px;
     padding: 3px 8px;
     margin-right: 10px;
@@ -388,7 +383,7 @@ hr {
     border-radius: 50%;
 }
 
-.fa-heart {
+.heart {
     font-size: 32x;
     color: palevioletred;
 }

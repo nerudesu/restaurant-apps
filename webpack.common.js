@@ -15,6 +15,7 @@ module.exports = {
   entry: {
     main: path.resolve(__dirname, 'src/scripts/index.js'),
     styles: [
+      path.resolve(__dirname, 'src/styles/fonts.css'),
       path.resolve(__dirname, 'src/styles/main.css'),
       path.resolve(__dirname, 'src/styles/responsive.css'),
     ],
@@ -34,6 +35,9 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
           },
         ],
       },

@@ -9,9 +9,9 @@ class AppBar extends HTMLElement {
         <!-- Mobile Navbar -->
         <div class="menumob">
           <img src="images/logo/logo.webp" alt="Company Logo">
-          <a href="javascript:void(0);" class="nav-menu" id="menu" aria-label="menu">
-            <i class="fas fa-bars" aria-hidden="true"></i>
-          </a>
+          <button class="nav-menu" id="menu" aria-label="menu">
+            <i class="icon-bars" aria-hidden="true"></i>
+          </button>
         </div>
 
         <nav id="drawer" class="navmob">

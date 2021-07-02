@@ -1,7 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import 'regenerator-runtime'; /* for async await transpile */
+import '../styles/fonts.css';
 import '../styles/main.css';
 import '../styles/responsive.css';
-import '../styles/fonts.css';
 
 import './components/app-bar';
 import './components/my-hero';

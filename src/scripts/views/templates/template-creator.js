@@ -12,11 +12,11 @@ const createRestaurantItemTemplate = (restaurant) => `
           sizes="50vw"
           alt="Image restaurant ${restaurant.name}">
       <div class="top-left">
-          <p class="restaurant-item__city"><i class="fas fa-map-marker-alt"></i> ${restaurant.city}</p>
+          <p class="restaurant-item__city"><i class="icon-map-marker"></i> ${restaurant.city}</p>
           <h1 class="restaurant-item__name">${restaurant.name}</h1>
       </div>
       <div class="bottom-left">
-          <p class="restaurant-item__rating"><i class="fas fa-star checked"></i> ${restaurant.rating}</p>
+          <p class="restaurant-item__rating"><i class="icon-star checked"></i> ${restaurant.rating}</p>
       </div>
       <div class="bottom-right">
       </div>
@@ -40,12 +40,12 @@ const createRestaurantDetailTemplate = (restaurant) => `
         alt="Image restaurant ${restaurant.restaurant.name}">
       <div class="top-left">
           <p class="restaurant-item__city">
-            <i class="fas fa-map-marker-alt"></i> ${restaurant.restaurant.address}, ${restaurant.restaurant.city}
+            <i class="icon-map-marker"></i> ${restaurant.restaurant.address}, ${restaurant.restaurant.city}
           </p>
           <h1 class="restaurant-item__name">${restaurant.restaurant.name}</h1>
       </div>
       <div class="bottom-left">
-          <p class="restaurant-item__rating"><i class="fas fa-star checked"></i> ${restaurant.restaurant.rating}</p>
+          <p class="restaurant-item__rating"><i class="icon-star checked"></i> ${restaurant.restaurant.rating}</p>
       </div>
       <div class="bottom-right" id="favButtonContainer">
       </div>
@@ -104,13 +104,13 @@ const createRestaurantDetailTemplate = (restaurant) => `
 // DONE: Giving different name
 const createFavRestoButtonTemplate = () => `
   <button class="button" id="favoriteButton" type="button" aria-label="Add to favorite">
-    <i class="far fa-heart" aria-hidden="true"></i>
+    <i class="icon-heart-o heart" aria-hidden="true"></i>
   </button>
 `;
 
 const createUnfavRestoButtonTemplate = () => `
   <button class="button" id="favoriteButton" type="button" aria-label="Remove from favorite">
-    <i class="fas fa-heart" aria-hidden="true"></i>
+    <i class="icon-heart heart" aria-hidden="true"></i>
   </button>
 `;
 
