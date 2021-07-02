@@ -7,6 +7,7 @@
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "build-image": "node sharp.js",
+    "build-video": "node build-video.js",
     "test": "karma start",
     "lint": "eslint ./src",
     "e2e": "codeceptjs run --steps"
@@ -26,6 +27,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.2",
     "file-loader": "^6.2.0",
+    "fluent-ffmpeg": "^2.1.2",
     "html-webpack-plugin": "^4.3.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-webp-webpack-plugin": "^3.3.4",
