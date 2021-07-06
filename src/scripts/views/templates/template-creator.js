@@ -31,7 +31,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 const createRestaurantDetailTemplate = (restaurant) => `
   <article class="restaurant-detail-card">
     <div class="container">
-      <img class="restaurant-item__thumbnail"
+      <img class="restaurant-item__thumbnail lazyload"
         data-src="${CONFIG.BASE_IMAGE_URL('large') + restaurant.restaurant.pictureId}"
         data-srcset="${CONFIG.BASE_IMAGE_URL('small') + restaurant.restaurant.pictureId} 425w,
           ${CONFIG.BASE_IMAGE_URL('medium') + restaurant.restaurant.pictureId} 768w,
