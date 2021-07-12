@@ -2,7 +2,13 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/fonts.css';
 import '../styles/main.css';
+import '../styles/navi.css';
+import '../styles/skip-link.css';
+import '../styles/hero.css';
+import '../styles/spinner.css';
+import '../styles/footer.css';
 import '../styles/responsive.css';
+import '../styles/snackbar.css';
 
 import './components/app-bar';
 import './components/my-hero';

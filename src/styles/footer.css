@@ -1,0 +1,15 @@
+/*
+ * Fixed Footer
+ */
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  padding: 16px;
+  background-image: linear-gradient(90deg, #1D1D1D, #474747);
+  text-align: center;
+  font-weight: bold;
+}

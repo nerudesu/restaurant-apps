@@ -12,150 +12,8 @@ body, html {
     height: 100%;
 }
 
-/* NAVIGATION */
-
-.menumob {
-    background-image: linear-gradient(90deg, #1D1D1D, #474747);
-    padding: 0;
-    height: 48px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.menumob img {
-    width: 185px;
-    height: 24px;
-    justify-self: start;
-    margin-left: 16px;
-}
-
-.menumob button {
-    color: white !important;
-    background-color: transparent;
-    font-size: 32px;
-    padding: 3px 8px;
-    margin-right: 10px;
-}
-
-.navmob {
-    width: 100%;
-    display: flex;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase
-}
-
-.navlistmob {
-    width: 60%;
-    padding: 0;
-    margin: 0;
-    text-align: left
-}
-
-.navitemsmob {
-    box-sizing: border-box;
-    display: inline-block;
-    text-align: right;
-    line-height: 24px;
-    text-transform: uppercase;
-    color: white !important
-}
-
-.navmob a {
-    display: inline-block;
-    padding: 1.3em;
-    text-decoration: none
-}
-
-.nav {
-    background-image: linear-gradient(90deg, #1D1D1D, #474747);
-    width: 100%;
-    display: flex;
-    font-weight: 600;
-    font-size: 12px;
-    text-transform: uppercase;
-    align-items: center;
-}
-
-.navlist {
-    width: 80%;
-    padding: 0;
-    margin-right: 32px;
-    text-align: right;
-}
-
-.nav img {
-    width: 185px;
-    height: 24px;
-    width: auto;
-    justify-self: start;
-    margin-left: 32px;
-}
-
-.navitems {
-    box-sizing: border-box;
-    display: inline-block;
-    text-align: right;
-    line-height: 24px;
-    text-transform: uppercase
-}
-
-.nav a {
-    display: inline-block;
-    padding: 1em;
-    text-decoration: none;
-    color: white !important
-}
-
-.nav a #aboutus {
-    padding-right: 0px;
-}
-
-.nav a:hover {
-    text-decoration: none
-}
-
 /*
- * Jumbotron
- */
-
-.hero {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    /* Use "linear-gradient" to add a darken background effect to the image */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../public/images/heros/hero-image-small.webp");
-    /* Set a specific height */
-    height: 50vh;
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-.hero-inner {
-    margin: 0 auto;
-    max-width: 800px;
-}
-
-.hero-title {
-    color: #fff;
-    font-weight: 500;
-    font-size: 36px;
-}
-
-.hero-tagline {
-    color: #fff;
-    margin-top: 16px;
-    font-size: 18px;
-    font-weight: 300;
-}
-
-/*
- * main
+ * Main
  */
 
 main {
@@ -164,7 +22,7 @@ main {
 }
 
 /*
- * content
+ * Content
  */
 
 .content {
@@ -216,6 +74,7 @@ main {
 .container {
     position: relative;
     height: 180px;
+    background-color: #1d1d1d;
 }
 
 .top-left {
@@ -276,7 +135,9 @@ main {
     text-align: justify;
 }
 
-/* Restaurant Details */
+/*
+ * Restaurant Details
+ */
 
 .restaurant {
     margin: 32px auto auto;
@@ -352,20 +213,6 @@ hr {
     background-color: black;
 }
 
-/* Fixed Footer */
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: #fff;
-    padding: 16px;
-    background-image: linear-gradient(90deg, #1D1D1D, #474747);
-    text-align: center;
-    font-weight: bold;
-}
-
 .checked {
     color: orange;
 }
@@ -402,120 +249,4 @@ mark {
 
 h2 {
     padding-bottom: 12px;
-}
-
-/*
- * Skip Link
- */
-
-.skip-link {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    background-color: #bf1722;
-    color: white;
-    padding: 10px;
-    font-size: 20px;
-    z-index: 100;
-    text-decoration: none
-}
-
-.skip-link:focus {
-    top: 100px
-}
-
-/* Spinner */
-
-.lds-ripple {
-    display: inline-block;
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-}
-
-/* The snackbar - position it at the bottom and in the middle of the screen */
-
-#snackbar {
-    visibility: hidden;
-    /* Hidden by default. Visible on click */
-    min-width: 250px;
-    /* Set a default minimum width */
-    margin-left: -125px;
-    /* Divide value of min-width by 2 */
-    background-color: #333;
-    /* Black background color */
-    color: #fff;
-    /* White text color */
-    text-align: center;
-    /* Centered text */
-    border-radius: 2px;
-    /* Rounded borders */
-    padding: 16px;
-    /* Padding */
-    position: fixed;
-    /* Sit on top of the screen */
-    z-index: 1;
-    /* Add a z-index if needed */
-    left: 50%;
-    /* Center the snackbar */
-    bottom: 10%;
-    /* 30px from the bottom */
-}
-
-/* Show the snackbar when clicking on a button (class added with JavaScript) */
-
-#snackbar.show {
-    visibility: visible;
-    /* Show the snackbar */
-    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-    However, delay the fade out process for 2.5 seconds */
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-/* Animations to fade the snackbar in and out */
-
-@-webkit-keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-    to {
-        bottom: 10%;
-        opacity: 1;
-    }
-}
-
-@keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-    to {
-        bottom: 10%;
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes fadeout {
-    from {
-        bottom: 10%;
-        opacity: 1;
-    }
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
-}
-
-@keyframes fadeout {
-    from {
-        bottom: 10%;
-        opacity: 1;
-    }
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
 }

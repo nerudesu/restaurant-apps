@@ -1,0 +1,36 @@
+/*
+ * Jumbotron
+ */
+
+.hero {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  /* Use "linear-gradient" to add a darken background effect to the image */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../public/images/heros/hero-image-small.webp");
+  /* Set a specific height */
+  height: 50vh;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-inner {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.hero-title {
+  color: #fff;
+  font-weight: 500;
+  font-size: 36px;
+}
+
+.hero-tagline {
+  color: #fff;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 300;
+}

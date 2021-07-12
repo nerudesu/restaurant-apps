@@ -18,7 +18,7 @@ const Favorite = {
     const restaurants = await FavoriteRestoIdb.getAllRestos();
     const restaurantsContainer = document.getElementById('restaurant-list');
 
-    if (restaurants.length === 0) {
+    if (!restaurants.length) {
       restaurantsContainer.innerHTML = '<p class="no-fav">You don\'t have any, explore for one!</p>';
     }
 
