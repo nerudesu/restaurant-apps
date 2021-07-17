@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6182dd71-3ce7-4f03-a3a7-ae31ffc5eb63/deploy-status)](https://app.netlify.com/sites/oishiinyan/deploys)
 
-A submission project for Dicoding Indonesia course Become a Front End Development Expert
+A submission project for Dicoding Indonesia course Become a Front-End Web Developer Expert.
 
 ## Syllabus
 
