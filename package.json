@@ -44,7 +44,7 @@
     "mini-css-extract-plugin": "^1.6.2",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "puppeteer": "^13.5.2",
-    "sharp": "^0.30.4",
+    "sharp": "^0.30.7",
     "style-loader": "^2.0.0",
     "webpack": "^4.43.0",
     "webpack-bundle-analyzer": "^4.5.0",
@@ -55,7 +55,7 @@
     "whatwg-fetch": "^3.2.0"
   },
   "dependencies": {
-    "idb": "^7.0.1",
+    "idb": "^7.0.2",
     "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.13.9",
     "serviceworker-webpack-plugin": "^1.0.1"
