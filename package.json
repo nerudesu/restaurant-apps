@@ -17,11 +17,11 @@
   "author": "Pradipta A. Suryadi <phionsoft@yahoo.co.jp>",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.18.13",
+    "@babel/core": "^7.19.0",
     "@babel/preset-env": "^7.18.10",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
-    "codeceptjs": "^3.3.4",
+    "codeceptjs": "^3.3.5",
     "copy-webpack-plugin": "^6.0.3",
     "css-loader": "^5.2.7",
     "eslint": "^8.22.0",
