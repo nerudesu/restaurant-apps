@@ -17,7 +17,7 @@
   "author": "Pradipta A. Suryadi <phionsoft@yahoo.co.jp>",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.18.10",
+    "@babel/core": "^7.18.13",
     "@babel/preset-env": "^7.18.10",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
